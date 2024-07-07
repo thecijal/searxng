@@ -281,24 +281,12 @@ article[data-vim-selected].category-social {
     color: var(--color-result-description-highlight-font);
   }
 
-  img {
-    &.thumbnail {
-      .ltr-float-left();
-      padding-top: 0.6rem;
-      .ltr-padding-right(1rem);
-      width: 20rem;
-      height: unset; // remove heigth value that was needed for lazy loading
-    }
-
-    &.image {
-      .ltr-float-left();
-      padding-top: 0.6rem;
-      .ltr-padding-right(1rem);
-      width: 7rem;
-      max-height: 7rem;
-      object-fit: scale-down;
-      object-position: right top;
-    }
+  img.thumbnail {
+    .ltr-float-left();
+    padding-top: 0.6rem;
+    .ltr-padding-right(1rem);
+    width: 7rem;
+    height: unset; // remove heigth value that was needed for lazy loading
   }
 
   .break {
@@ -306,7 +294,8 @@ article[data-vim-selected].category-social {
   }
 }
 
-.result-paper {
+.result-paper,
+.result-packages {
   .attributes {
     display: table;
     border-spacing: 0.125rem;
@@ -349,6 +338,12 @@ article[data-vim-selected].category-social {
   }
 }
 
+.result-packages {
+  .attributes {
+    margin-top: 0.3rem;
+  }
+}
+
 .template_group_images {
   display: flex;
   flex-wrap: wrap;
@@ -385,6 +380,16 @@ article[data-vim-selected].category-social {
 .embedded-content iframe {
   width: 100%;
   padding: 10px 0 0 0;
+}
+
+.result-videos {
+  img.thumbnail {
+    .ltr-float-left();
+    padding-top: 0.6rem;
+    .ltr-padding-right(1rem);
+    width: 20rem;
+    height: unset; // remove heigth value that was needed for lazy loading
+  }
 }
 
 .result-videos .content {
@@ -455,6 +460,17 @@ article[data-vim-selected].category-social {
     object-fit: cover;
     vertical-align: bottom;
     background: var(--color-result-image-background);
+  }
+
+  .image_resolution {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 50%);
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+    border-top-left-radius: 0.3rem;
   }
 
   span.title,
@@ -1076,7 +1092,8 @@ summary.title {
     display: none;
   }
 
-  .result-paper {
+  .result-paper,
+  .result-packages {
     .attributes {
       display: block;
 
